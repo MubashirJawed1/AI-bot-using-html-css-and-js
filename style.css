@@ -1,0 +1,581 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: poppins, sans-serif;
+   color: white;
+
+}
+
+.d-flex {
+   display: flex;
+
+}
+
+.none {
+   display: none;
+}
+
+.animation-in {
+   animation: animate-in 1.2s forwards 1s ease-in-out;
+
+}
+
+@keyframes animate-in {
+   0% {
+      opacity: 0;
+      top: 0px;
+   }
+
+   100% {
+      opacity: 1;
+      top: 30%;
+   }
+}
+
+
+:root {
+   --bg-color: #212121;
+   --message-bg: #2F2F2F;
+   --font-color: #ECECEC;
+
+}
+
+body {
+   background-color: var(--bg-color);
+   position: relative;
+   width: 100%;
+   height: 100vh;
+}
+
+nav {
+   width: 100%;
+   background-color: var(--bg-color);
+   border-bottom: 2px solid var(--message-bg);
+   padding: 16px;
+   position: fixed;
+   top: 0px;
+   z-index: 3;
+
+}
+
+nav div {
+   width: 88%;
+   margin: auto;
+   display: flex;
+   align-items: center;
+   gap: 15px;
+}
+
+nav div img {
+   width: 54px;
+}
+
+nav div p {
+   color: var(--font-color);
+   font-size: 1.5rem;
+   font-weight: 600;
+}
+
+header {
+   width: 100%;
+   position: absolute;
+   text-align: center;
+   top: 34%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   line-height: 39px;
+   
+
+}
+
+
+
+header h1 {
+   width: fit-content;
+   font-size: 2.5rem;
+   background: linear-gradient(to right, green, yellow);
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+}
+
+header p {
+   color: #9790906e;
+   font-size: 2.3rem;
+   font-weight: 500;
+}
+
+/* .chat-container */
+.chat-container {
+   width: 100%;
+   height: auto;
+   padding: 101px 80px 80px 80px;
+   
+
+}
+
+.user-chat {
+   width: 55%;
+   position: relative;
+   padding: 16px;
+   left: 43%;
+
+}
+
+.ai-chat {
+   width: 90%;
+   position: relative;
+   padding: 16px;
+}
+
+.user-chat .user-chat-div {
+   width: 90%;
+   padding: 18px;
+   background-color: var(--message-bg);
+   color: var(--font-color);
+   font-size: 1rem;
+   border-radius: 21px 0 21px 21px;
+}
+
+.ai-chat .ai-chat-div {
+   width: 90%;
+   padding: 18px;
+   font-size: 1rem;
+   color: var(--font-color);
+   position: relative;
+   left: 5%;
+   border-radius: 0 21px 21px 21px;
+
+
+}
+
+.ai-chat .ai-chat-div .loading{
+   display: flex;
+}
+.ai-chat-div .loading span{
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   margin: 0 6px;
+   background-color:var(--font-color);
+   -webkit-animation: bounce 1s infinite alternate;
+   -moz-animation:  bounce 1s infinite alternate ;
+   -o-animation:  bounce 1s infinite alternate;
+   animation:  bounce 1s infinite alternate;
+
+
+}
+
+@-webkit-keyframes bounce{
+   to{
+      opacity: .2;
+      transform: translateX(-15px);
+   }
+}
+@-moz-keyframes bounce{
+   to{
+      opacity: .2;
+      transform: translateX(-15px);
+   }
+}
+@-o-keyframes bounce{
+   to{
+      opacity: .2;
+      transform: translateX(-15px);
+   }
+}
+@keyframes bounce{
+   to{
+      opacity: .2;
+      transform: translateX(-15px);
+   }
+}
+
+.loading span:nth-child(2){
+   animation-delay: .3s;
+}
+.loading span:nth-child(3){
+   animation-delay: .6s;
+}
+
+
+.chat-container img {
+   width: 44px;
+}
+
+.chat-container .user-chat img {
+   position: absolute;
+   right: 15px;
+   top: 3px;
+}
+
+.chat-container .ai-chat img {
+   position: absolute;
+   z-index: 1;
+
+}
+
+/* prompt-container */
+
+.prompt-container {
+   background-color: var(--bg-color);
+   height: 86px;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+   position: fixed;
+   bottom: 0px;
+   z-index: 2;
+}
+
+.prompt-container {
+   width: 100%;
+}
+
+
+
+#prompt-input {
+   width: 32%;
+   max-height: 56px;
+   background-color: var(--message-bg);
+   color: white;
+   outline: none;
+   border: none;
+   padding: 15px 51px 15px 15px;
+   resize: none;
+   font-size: 16px;
+   border-radius: 30px;
+   position: relative;
+}
+
+#prompt-input::-webkit-scrollbar {
+   width: 0px;
+}
+
+.prompt-container .svg {
+   position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 30%;
+    z-index: 1;
+    background-color: #408530;
+    transition: all 555ms ease-in-out;
+}
+.prompt-container .svg:hover {
+    background-color: #1c8e00;
+}
+
+
+.prompt-container .svg .send {
+   right: 36%;
+   width: 21px;
+   height: 40px;
+   transition: fil 2s ease-in-out;
+}
+.prompt-container .svg .send path{
+   fill: var(--font-color);
+}
+
+.prompt-container .svg .send path:hover{
+   fill: var(--font-color);
+
+}
+
+
+
+
+
+
+@media only screen and (max-width: 900px) {
+
+   .chat-container {
+      padding: 85px 10px 85px 10px;
+   }
+
+   .user-chat {
+      width: 65%;
+      left: 37%;
+   }
+
+   .user-chat .user-chat-div {
+      width: 86%;
+   }
+
+
+   .ai-chat {
+      width: 76vw;
+   }
+
+   .ai-chat .ai-chat-div {
+      left: 6%;
+   }
+
+   #prompt-input {
+      width: 38%;
+   }
+
+   header h1 {
+      font-size: 2.4rem;
+   }
+
+
+   header p {
+      font-size: 2.2rem;
+   }
+
+   .prompt-container .svg {
+      width: 55px;
+      height: 55px;
+      margin-left: 35%;
+      border-radius: 50%;
+   }
+
+}
+
+
+@media only screen and (max-width: 700px) {
+
+   .chat-container {
+      padding: 101px 10px 85px 10px;
+   }
+
+   .user-chat {
+      width: 71%;
+      left: 30%;
+   }
+
+   .user-chat .user-chat-div {
+      width: 87%;
+   }
+
+
+   .ai-chat {
+      width: 79vw;
+   }
+
+   .ai-chat .ai-chat-div {
+      width: 93%;
+      left: 8%;
+   }
+
+   #prompt-input {
+      width: 42%;
+   }
+
+   .prompt-container .svg .send {
+      right: 34%;
+   }
+
+}
+
+@media only screen and (max-width: 500px) {
+   .chat-container {
+      padding: 85px 10px 85px 10px;
+   }
+
+   .user-chat {
+      width: 74%;
+        left: 26%;
+   }
+
+   .user-chat .user-chat-div {
+      width: 83%;
+   }
+
+
+   .ai-chat {
+      width: 92vw;
+   }
+
+   .ai-chat .ai-chat-div {
+      width: 95%;
+      left: 9%;
+   }
+   .chat-container img {
+      width: 37px;
+   }
+
+   #prompt-input {
+      width: 57%;
+      max-height: 47px;
+      padding: 12px 43px 12px 12px;
+  }
+
+  
+header h1 {
+   font-size: 2.2rem;
+}
+header p {
+   font-size: 2rem;
+}
+
+.prompt-container .svg {
+   width: 48px;
+   height: 48px;
+   margin-left: 50%;
+   border-radius: 50%;
+}
+
+}
+
+@media only screen and (max-width: 360px) {
+
+   nav div {
+      width: 100%;
+      gap: 7px;
+   }
+
+   nav div p {
+      font-size: 1.3rem;
+
+   }
+
+   nav div img {
+      width: 50px;
+   }
+
+   .chat-container {
+      padding: 90px 6px 85px 6px;
+   }
+
+   .user-chat {
+      width: 73%;
+      left: 25%;
+
+   }
+
+   .user-chat .user-chat-div {
+      width: 83%;
+      padding: 12px;
+      font-size: 15px;
+   }
+
+
+   .ai-chat {
+      width: 92vw;
+   }
+
+   .ai-chat .ai-chat-div {
+      width: 95%;
+      left: 9%;
+      font-size: 15px;
+   }
+
+   .chat-container img {
+      width: 33px;
+   }
+
+   .chat-container .user-chat img {
+      right: 4px;
+   }
+
+   .chat-container .ai-chat img {
+      left: 6px;
+   }
+
+   #prompt-input {
+      width: 78%;
+      max-height: 47px;
+      padding: 11px 50px 8px 12px;
+      font-size: 15px;
+   }
+   .prompt-container .svg .send {
+      width: 19px;
+      height: 19px;
+   }
+   header p {
+      font-size: 1.9rem;
+  }
+
+   .prompt-container .svg {
+      width: 48px;
+      height: 48px;
+      margin-left: 59%;
+      border-radius: 50%;
+  }
+
+}
+
+@media only screen and (max-width: 260px) {
+
+   nav div {
+      width: 100%;
+      gap: 5px;
+   }
+
+   nav div p {
+      font-size: 1.1rem;
+
+   }
+
+   nav div img {
+      width: 40px;
+   }
+
+   .chat-container {
+      padding: 100px 6px 85px 6px;
+   }
+
+   .user-chat {
+      width: 93%;
+      left: 7%;
+
+   }
+
+   .user-chat .user-chat-div {
+      width: 86%;
+      padding: 10px;
+      font-size: 14px;
+   }
+
+
+   .ai-chat {
+      width: 92vw;
+   }
+
+   .ai-chat .ai-chat-div {
+      width: 100%;
+      font-size: 14px;
+      left: 7%;
+      padding: 14px;
+  }
+
+   .chat-container img {
+      width: 30px;
+   }
+
+   #prompt-input {
+      width: 100%;
+      font-size: 10px;
+      max-height: 40px;
+      padding: 12px 32px 7px 9px;
+   }
+   header h1 {
+      font-size: 2rem;
+  }
+   header p {
+      font-size: 1.8rem;
+  }
+
+   .prompt-container .svg {
+      width: 39px;
+      height: 39px;
+      margin-left: 75%;
+  }
+  .prompt-container .svg .send {
+   width: 17px;
+   height: 17px;
+}
+
+}
